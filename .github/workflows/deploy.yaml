@@ -1,4 +1,4 @@
-name: Test Project 
+name: Deploy Project
 
 on: push 
 
@@ -15,3 +15,12 @@ jobs:
             
             - name: Run Tests
               run: npm run test
+    
+    deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Build Project
+          run: npm run build
+
+        - name: Deploy
+          run: echo "Deploying..."
