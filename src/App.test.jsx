@@ -6,7 +6,7 @@ import App from './App'
 describe('App', () => {
   it('renders Get started heading', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { name: /get started/i })).not.toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /get started/i })).toBeInTheDocument()
   })
 
   it('increments counter on click', async () => {
