@@ -1,15 +1,19 @@
-name: CI 
-on: 
+name: CI
+
+on:
   push:
-branches:
-  - main
+    branches:
+      - main
+
 jobs:
-    name: test
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-      - name: install
-        run: npm install 
-        name: run 
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Test
         run: npm test
